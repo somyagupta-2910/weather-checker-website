@@ -1,0 +1,268 @@
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+:root {
+    --colorDark1: #112D4E;
+    --colorDark2: #3F72AF;
+    --colorLight1: #DBE2EF;
+    --colorLight2: #F9F7F7;
+}
+
+/* Wrapper properties */
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    color: var(--colorLight2);
+    background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%);
+}
+
+/* Heading */
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 20px;
+}
+
+/* tab container styling */
+.tab-container{
+    width: 90%;
+    max-width: 550px;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 4rem;
+    justify-content: space-between;
+}
+
+/* The styling of two tabs */
+.tab{
+    cursor: pointer;
+    font-size: 0.875rem;
+    letter-spacing: 1.75px;
+    padding: 5px 8px;
+}
+
+/* When a tab is selected, the following properties are added to that element */
+.current-tab{
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 4px;
+}
+
+/* Styling the main container that comprise all the information */
+.weather-container{
+    margin-block:4rem;
+}
+
+/* Styling the Grant Access Button */
+.btn{
+    /* Removes the default properties of the elment */
+    all: unset; 
+    font-size: 0.85rem;
+    background-color: var(--colorDark2);
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 30px;
+}
+
+/* A common container to position the items in the center */
+.sub-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.error-container{
+    display: none;
+}
+
+.error-container h1{
+    color: red;
+    font-size: 5rem;
+}
+
+.error-container p{
+    color: yellow;
+    font-size: 2rem;
+}
+
+.error-container.active{
+    display: flex;
+}
+
+/* Styling grant location container, by default it is hidden*/
+.grant-location-container{
+    display: none;
+}
+
+/* Made visible */
+.grant-location-container.active{
+    display:flex;
+}
+
+/* Styling the grant-container child elements */
+.grant-location-container img{
+    margin-bottom: 2rem;
+}
+
+.grant-location-container p:first-of-type{
+    font-size: 1.75rem;
+    font-weight: 600; 
+}
+
+.grant-location-container p:last-of-type{
+    font-size:0.85rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.75px;
+}
+
+/* Styling grant location container, by default it is hidden*/
+.loading-container{
+    display: none;
+}
+
+.loading-container.active{
+    display: flex;
+}
+
+/* Styling the loading-container child elements */
+.loading-container p{
+    text-transform: uppercase;
+}
+
+/* Styling grant location container, by default it is hidden*/
+.user-info-container{
+    display:none;
+}
+
+.user-info-container.active{
+    display: flex;
+}
+
+/* make the city container as flex */
+.name{
+    display: flex;
+    align-items: center;
+    gap: 0 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Styling the City name and flag */
+.name p{
+    font-size:2rem;
+}
+
+.name img{
+    width: 30px;
+    height:30px;
+    object-fit: contain;
+}
+
+/* Styling the user-info-container elements */
+.user-info-container p[data-weatherDesc]{
+    font-size:1.5rem;
+    font-weight:200;
+}
+
+.user-info-container img[data-weatherIcon]{
+    width:90px;
+    height:90px;
+}
+
+.user-info-container p[data-temp]{
+    font-size:2.75rem;
+    font-weight:700;
+}
+
+/* Styling the 3 cards container */
+.parameter-container{
+    width:90%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.parameter{
+    width:30%;
+    max-width:200px;
+    background-color: rgba(219, 226, 239, 0.5);;
+    border-radius: 5px;
+    padding:1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px 0;
+}
+
+/* Styling elements of the cards */
+.parameter img{
+    width:50px;
+    height:50px;
+}
+
+.parameter p:first-of-type{
+    font-size: 1.15rem;
+    font-weight:600;
+    text-transform: uppercase;
+}
+
+.parameter p:last-of-type{
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+/* Styling the form */
+.form-container{
+    display: none;
+    width:90%;
+    max-width:550px;
+    margin:0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 0 10px; 
+    margin-bottom: 3rem;
+}
+
+.form-container.active{
+    display: flex;
+}
+
+.form-container input{
+    all:unset;
+    width: calc(100% - 80px);
+    height:40px;
+    padding: 0 20px;
+    background-color:rgba(219, 226, 239, 0.5);
+    border-radius: 10px;
+}
+
+.form-container input::placeholder{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Show outline when the search field is clicked */
+.form-container input:focus{
+    outline: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+/* make the search buttton as  */
+.form-container .btn {
+    padding:unset;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    margin-bottom:1px;
+}

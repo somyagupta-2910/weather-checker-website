@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Heading -->
+        <h1>Weather App</h1>
+
+        <!-- The two weather tabs -->
+        <div class="tab-container">
+            <p class="tab" data-userWeather>Your weather</p>
+            <p class="tab" data-searchWeather>Search Weather</p>
+        </div>
+
+        <!-- Big Container for weather -->
+        <div class="weather-container">
+
+            <!-- Grant Location Container -->
+            <!-- When the user opens the site for the first time, he will see this -->
+            <div class="sub-container grant-location-container">
+                <!-- Image -->
+                <img src="./images/location.png" alt="" width="80" height="80" loading="lazy">
+                <!-- Paragrpahs -->
+                <p>Grant Location Access</p>
+                <p>Allow Access to get weather information</p>
+                <!-- Grant Access Button -->
+                <button class="btn" data-grantAccess>Grant Access</button>
+            </div>
+
+            <!-- Search Weather Section -->
+            <!-- The text field Section -->
+            <form action="" class="form-container" data-SearchForm>
+                <!-- Text Filed -->
+                <input type="text" placeholder="Search for City..." data-searchInput>
+
+                <!-- Search Button -->
+                <button class="btn" type="submit">
+                    <img src="./images/search.png" alt="" width="20" height="20" loading="lazy">
+                </button>
+            </form>
+
+            <!-- Error Container -->
+            <div class="sub-container error-container">
+                <h1>404</h1>
+                <p>Oops. City Not Found!</p>
+            </div>
+
+            <!-- Loading Screen Container -->
+            <div class="sub-container loading-container">
+                <!-- Loading Gif -->
+                <img src="./images/loading.gif" alt="" width="150" height="150">
+                <p>Loading</p>
+            </div>
+
+            <!-- Your Weather Info -->
+            <div class="sub-container user-info-container">
+                <div class="name">
+                    <!-- City Naame -->
+                    <p data-cityname></p>
+                    <!-- Country Flag Logo -->
+                    <img data-countryIcon>
+                </div>
+
+                <!-- Weather Description -->
+                <p data-weatherDesc></p>
+
+                <!-- Weather Icon -->
+                <img data-weatherIcon>
+
+                <!-- Temperature Description -->
+                <p data-temp></p>
+
+                <!-- Weather Charactteristics - 3 cards -->
+                <div class="parameter-container">
+                    <!-- Card 1 -->
+                    <div class="parameter">
+                        <img src="./images/wind.png" alt="">
+                        <p>Windspeed</p>
+                        <p data-windspeed></p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="parameter">
+                        <img src="./images/humidity.png" alt="">
+                        <p>Humidity</p>
+                        <p data-humidity></p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="parameter">
+                        <img src="./images/cloud.png" alt="">
+                        <p>Clouds</p>
+                        <p data-cloudiness></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
